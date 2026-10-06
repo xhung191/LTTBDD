@@ -21,7 +21,6 @@ class MyApp extends StatelessWidget {
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
-  // Nút vuông bo góc dùng chung cho nút back và nút edit
   Widget _squareButton({
     required IconData icon,
     required Color color,
@@ -53,7 +52,6 @@ class ProfileScreen extends StatelessWidget {
       body: SafeArea(
         child: Stack(
           children: [
-            // Hàng nút phía trên
             Padding(
               padding: const EdgeInsets.all(16),
               child: Row(
@@ -72,8 +70,6 @@ class ProfileScreen extends StatelessWidget {
                 ],
               ),
             ),
-
-            // Avatar + tên + MSSV ở giữa màn hình
             Center(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -84,8 +80,6 @@ class ProfileScreen extends StatelessWidget {
                       height: 140,
                       child: Image.asset(
                         'assets/avatar.jpg',
-                        fit: BoxFit.cover,
-                        // Nếu chưa có ảnh thì hiện icon thay thế
                         errorBuilder: (context, error, stackTrace) => Container(
                           color: const Color.fromARGB(255, 112, 124, 134),
                           child: const Icon(Icons.person,
